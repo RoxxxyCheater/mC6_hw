@@ -71,3 +71,38 @@ input_btn.addEventListener('click', (e) => {
     }
   }
 });
+
+
+function EchoBot(sendtext){
+  const wsUri = "wss://echo-ws-service.herokuapp.com";
+  const output = document.getElementById("output");
+  const btnOpen = document.querySelector('.j-btn-open');
+  const btnClose = document.querySelector('.j-btn-close');
+  const btnSend = document.querySelector('.j-btn-send');
+ 
+  let websocket;
+  websocket = new WebSocket(wsUri);
+  websocket.onopen = function(evt) {
+    console.log("CONNECTED", 'EchoBot'); 
+    websocket.send(sendtext);
+  }; 
+  
+  websocket.onclose = function(evt) {
+    console.log("DISCONNECTED", 'EchoBot');
+    //createMessage(sendtext, 'EchoBot');
+  };
+  websocket.onmessage = function(evt) {
+    createMessage('RESPONSE: ' + evt.data.toUpperCase(), 'EchoBot');
+  };
+  websocket.onerror = function(evt) {
+    console.log('ERROR: ' + evt.data, 'EchoBot');
+    
+  };
+
+  geo_btn.addEventListener('click', () => {
+    websocket.close();
+    websocket = null;
+  });
+  
+
+}
