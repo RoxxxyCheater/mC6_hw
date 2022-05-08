@@ -1,0 +1,88 @@
+body{
+    background-color: black;
+}
+.client_message, .chat-field, .server_message, .chat_input {
+    display: flex;
+    border:solid 5px #bad7ec;
+    
+}
+
+.server_message{
+    display: flex;
+    border-radius: 15px;
+    width: 75%;
+    margin: 5px 5px;
+    /* min-height: 30px; */
+    padding: 10px;
+    word-wrap: break-word;
+    flex-direction: column;
+    white-space: pre-wrap;
+}
+.client_message {
+    display: flex;
+    border-radius: 15px;
+    width: 75%;
+    margin: 5px 5px;
+    /* min-height: 30px; */
+    padding: 10px;
+    word-wrap: break-word;
+    flex-direction: column;
+    align-self: self-end;
+    white-space: pre-wrap;
+}
+.client_message p, .server_message p{
+    font-size: 16px;
+    word-wrap: break-word;
+    line-height: 1.2;
+    max-width: 100%;
+    margin: -2px 0;
+}
+
+.input_btn, .getGeolocation {
+    background-color: #bad7ec;
+    width: 21%;
+    height: 45px;
+}
+.chat_input{
+    height: 45px;
+    width: 56%;
+    min-width: 150px;
+}
+.chat-box{
+    position: fixed; /* Абсолютное позиционирование */
+    bottom: 10px; /* Положение от нижнего края */
+    right: 0px; /* Положение от правого края */
+    line-height: 1px;
+    padding: 3px;
+    width: 420px;
+    height: 500px;
+    background-color: whitesmoke;
+    
+}
+.chat-field{
+    flex-direction: column;
+    position: absolute; 
+    left:0;
+    right:0;
+    height: 87%;
+    bottom:0;
+    overflow: scroll;
+}
+
+.chat-field::-webkit-scrollbar {
+    width: 0;
+  }
+.input_field{
+    display: flex;
+    width: 98%;
+    justify-content: space-between;
+}
+#Author {
+    position: relative;
+    font-size: 10px;
+    color: blue;
+    top: -5px;
+}
+#status{
+    align-self: flex-start;
+}
