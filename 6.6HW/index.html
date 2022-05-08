@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Weather Widget</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="chat-box">
+    <div class="input_field">
+      <input type="text" class="chat_input" onsubmit="newMessage()" placeholder="Введите текст сообщения">
+      <button class="input_btn" onclick="newMessage()">Отправить</button>
+      <button class="getGeolocation">Гео-локация</button>
+    </div>
+    <div class="chat-field">
+      <div class="server_message" id="0">
+
+        <p id="Author">EchoBot</p>
+        <p id="status">Приветствую в чате!</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
